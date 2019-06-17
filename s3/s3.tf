@@ -1,5 +1,7 @@
+variable "bucket_name"{}
+
 resource "aws_s3_bucket" "super-s3-bucket" {
-  bucket = "colm-terraform-test"
+  bucket = "${var.bucket_name}"
   acl    = "private"
 
   tags = {
